@@ -1,0 +1,71 @@
+<html>
+<head>
+<style>    
+.et      
+{
+
+   background-color:green;
+   color:black;
+   padding: 20px 30px;            <!--style for all buttons-->
+   text-align:center;
+   font-size:30px;
+   }
+.etw
+  {
+  font-size:25px;               <!--style for header-->
+  }
+
+</style>       
+<script>
+function AC()               
+{   
+   document.getElementById("abi").value="";    <!--function for clearing AC-->
+}
+function ABI(input)
+{
+   document.getElementById("abi").value+=input;      <!--FUNCTION FOR GETTING INPUT-->
+}
+
+function CALC()               <!----THIS FUNCTION IS CALLED BY CALC FUNCTION IN BODY-->
+{
+    var a=eval(document.getElementById("abi").value);
+    document.getElementById("abi").value=a;
+}
+</script>
+</head>
+<body>
+<table border="3" cellspacing="5px" cellpadding="5px">   <!--cell  spacing and padding-->
+<caption><h1>BASIC CALCULATOR</h1></caption>
+<tr>
+<td colspan="3" align="center" bgcolor="blue"><input type="text" class="etw" id="abi"></td>    <!--creating class for text box to design in css-->
+<td align="center"><button class="et" onclick="AC()">AC</button></td>
+</tr>
+<tr>
+<td align="center"><button class="et" onclick="ABI('1')">1</button></td>
+<td align="center"><button class="et" onclick="ABI('2')">2</button></td>
+<td align="center"><button class="et" onclick="ABI('3')">3</button></td>
+<td align="center"><button class="et" onclick="ABI('+')">+</button></td>
+</tr>
+
+<tr>
+<td align="center"><button class="et" onclick="ABI('4')">4</button></td>
+<td align="center"><button class="et" onclick="ABI('5')">5</button></td>
+<td align="center"><button class="et" onclick="ABI('6')">6</button></td>
+<td align="center"><button class="et" onclick="ABI('-')">-</button></td>
+</tr>
+
+<tr>
+<td align="center"><button class="et" onclick="ABI('7')">7</button></td>
+<td align="center"><button class="et" onclick="ABI('8')">8</button></td>
+<td align="center"><button class="et" onclick="ABI('9')">9</button></td>
+<td align="center"><button class="et" onclick="ABI('*')">*</button></td>
+</tr>
+
+<tr>
+<td align="center"><button class="et" onclick="ABI('0')">0</button></td>
+<td align="center"><button class="et" onclick="ABI('%')">%</button></td>
+<td align="center"><button class="et" onclick="ABI('/')">/</button></td>
+<td align="center"><button class="et" onclick="CALC('=')">=</button></td>   <!--INORDER TO CALCULATE THE NUMBERS WE ENTERS-->
+</tr>
+</body>
+</html>
